@@ -21,11 +21,16 @@ Shaung Cheng
 
 ## Dev notes
 
-Project overall flow:
+### Project overall flow:
 
-1. (get/navigate to home page)
-1. get state index urls
-1. get state abbrv
+Do it once
+
+1. [x] (get/navigate to home page)
+1. [x] get state index urls
+1. [x] get state abbrv
+1. [ ] store urls & abbrv in db
+
+Loop (plus caching to avoid duplication)
 
 1. (get/navigate to state page)
 1. get site element
