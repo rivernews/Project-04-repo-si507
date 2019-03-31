@@ -7,11 +7,47 @@ option 1
 Shaung Cheng
 
 ## what your project does, concisely
+This python program scraps information of all sites on the National Park Service website and store them in database.
+
+## how to run your project
+
+### To install the project:
+
+1. Git clone this project.
+1. Make a virtual environment in the project root folder.
+1. `pip install -r requirements.txt` to install all dependencies.
+
+### To run the project:
+
+1. `python SI507_project4.py` 
+
+The repo already contains a database `my-database.sqlite` of all sites finished scrapping. 
+
+If you run the program right after you clone this project, the program won't make any request since the program checks if data is already in database (caching). 
+
+For demo purpose, you can delete `my-database.sqlite` w/o concerns and run the program. The program will start scrapping the website and store in database. The program also prints percentage information, so you can see the progress.
+
+## Highlights
+
+- A light ORM implemented by raw SQL.
+
+The ORM can do `count`, `filter` `update`, `create` and initial schema creation, and is largely used in the scrapper for storing and caching purpose. The `DatabaseManager` in `database.py` implements these methods. The final CSV is exported by using the sql command:
+
+```sql
+select Sites.Name, Sites.Description, Sites.Location, Sites.Type, States.Name AS `State` from Sites join States on Sites.StateID = States.id;
+```
+
+- Using `Selenium` for scrapping.
+
+Selenium is originally intended for UI testing, but it can do web scrapping as well. I implemented a `Browser` class in `browser.py` to provide a convenient interface for my python program to access elements and values on the web page.
+
+- OOP
+
+A scrapper class `NationalParkWebCrawler` instance in `SI507_project4.py` mainly do the scrapping and data storing job, while using the `Browser` class and `DatabaseManager` instance to perform higher-level operations.
 
 ### Database schema
 ![database schema](db-schema.png)
 
-## how to run your project
 
 
 # Reference 
@@ -36,18 +72,3 @@ Loop (plus caching to avoid duplication)
 1. get site element
 1. try to get each value
 1. store data in db
-
-\# TODO: add in cache plan after one page succceed
-
-We can use the following sql to export to CSV:
-
-```sql
-select Sites.Name, Sites.Description, Sites.Location, Sites.Type, States.Name AS `State` from Sites join States on Sites.StateID = States.id;
-```
-
-
-## Grading
-
-LINK: The link to your GitHub repository with your project
-GRADE: The letter grade of the options below that you are assigning yourself for this project. (see grade guidelines to help you select it. The ones listed are the options -- see syllabus)
-GRADE JUSTIFICATION: A BRIEF(!!) sentence describing why you are assigning that letter grade to yourself for this project. (You are welcome but not required to include something you learned or thought was interesting about your learning process, or a plan for your next step/s, but we just want to know briefly why the grade you gave.)

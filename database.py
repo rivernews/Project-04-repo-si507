@@ -161,19 +161,3 @@ class DatabaseManager:
             ])
 
         return self.db
-    
-    def wipe_database(self):
-        self.db.delete()
-        return
-    
-    def export_site_to_csv(self):
-        # TODO
-        return
-    
-    def is_page_complete(self, url):
-        """
-            check if the url is completed.
-            will try to get that url from table `CompletedPage`.
-            if it's there, it means the page is completed, and should return TRUE.
-        """
-        return False
