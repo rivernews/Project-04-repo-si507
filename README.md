@@ -1,7 +1,7 @@
 # Project-04-repo-si507
 
 ## Which project option you chose
-option 1
+Option 1
 
 ## What your name is
 Shaung Cheng
