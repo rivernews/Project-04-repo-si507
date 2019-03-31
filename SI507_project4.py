@@ -70,7 +70,7 @@ class NationalParkWebCrawler:
 
         for page_index_zero, page_object in enumerate(page_objects):
             page_index = page_index_zero + 1
-            page_percentage = str((page_index / 56) * 100) + '%'
+            page_percentage = str( round(page_index / 56, 2) * 100) + '%'
 
             page_object_id = page_object[0]
             url = page_object[1]
@@ -81,7 +81,7 @@ class NationalParkWebCrawler:
 
             print("\n\n\n\n")
             print("Page for state", state_abbreviation, "page id =", page_object_id)
-            print(f"{page_percentage} ="*30)
+            print(page_percentage,"="*30)
 
             self.navigate_to(url)
 
@@ -105,15 +105,15 @@ class NationalParkWebCrawler:
                 type_value = type_element.get_attribute("innerHTML")
                 name_value = name_element.get_attribute("innerHTML")
                 location_value = location_element.get_attribute("innerHTML")
-                description_value = description_element.get_attribute("innerHTML")
+                description_value = description_element.get_attribute("innerHTML").strip()
 
                 # process data (optional)
-                print(f'page {page_index} - site {index}')
+                print(f'{page_percentage} page {page_index} - site {index}')
                 print(type_value)
                 print(name_value)
                 print(location_value)
                 print(description_value)
-                print(f'{page_percentage} -'*30)
+                print(page_percentage,'-'*30)
 
                 # save in db
                 self.db.create(TableName.sites.value, {

@@ -39,6 +39,12 @@ Loop (plus caching to avoid duplication)
 
 \# TODO: add in cache plan after one page succceed
 
+We can use the following sql to export to CSV:
+
+```sql
+select Sites.Name, Sites.Description, Sites.Location, Sites.Type, States.Name AS `State` from Sites join States on Sites.StateID = States.id;
+```
+
 
 ## Grading
 
