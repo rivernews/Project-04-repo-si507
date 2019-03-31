@@ -1,15 +1,15 @@
 # Project-04-repo-si507
 
-## which project option you chose
+## Which project option you chose
 option 1
 
-## what your name is
+## What your name is
 Shaung Cheng
 
-## what your project does, concisely
+## What your project does, concisely
 This python program scraps information of all sites on the National Park Service website and store them in database.
 
-## how to run your project
+## How to run your project
 
 ### To install the project:
 
