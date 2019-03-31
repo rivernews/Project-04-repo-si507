@@ -71,11 +71,20 @@ class Browser:
         except Exception:
             raise RuntimeError("ERROR: fail to request page {}".format(page_url))
     
-    def access_targets(self, selector):
+    def access_targets(self, selector, base_element=None, many=True):
         """
             Locating Elements: https://selenium-python.readthedocs.io/locating-elements.html#locating-elements
         """
-        targets = self.browser.find_elements_by_css_selector(selector)
+        if base_element:
+            base = base_element
+        else:
+            base = self.browser
+        
+        if many:
+            targets = base.find_elements_by_css_selector(selector)
+        else:
+            targets = base.find_element_by_css_selector(selector)
+            
         return targets
     
     def close(self):

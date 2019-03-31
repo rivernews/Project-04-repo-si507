@@ -28,7 +28,7 @@ Do it once
 1. [x] (get/navigate to home page)
 1. [x] get state index urls
 1. [x] get state abbrv
-1. [ ] store urls & abbrv in db
+1. [x] store urls & abbrv in db
 
 Loop (plus caching to avoid duplication)
 
