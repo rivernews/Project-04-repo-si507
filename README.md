@@ -31,7 +31,7 @@ For demo purpose, you can delete `my-database.sqlite` w/o concerns and run the p
 
 - A light ORM implemented by raw SQL.
 
-The ORM can do `count`, `filter` `update`, `create` and initial schema creation, and is largely used in the scrapper for storing and caching purpose. The `DatabaseManager` in `database.py` implements these methods. The final CSV is exported by using the sql command:
+The ORM can do `count`, `filter`, `update`, `create` and initial schema creation, and is largely used in the scrapper for storing and caching purpose. The `DatabaseManager` in `database.py` implements these methods. The final CSV is exported by using the sql command:
 
 ```sql
 select Sites.Name, Sites.Description, Sites.Location, Sites.Type, States.Name AS `State` from Sites join States on Sites.StateID = States.id;
@@ -39,7 +39,7 @@ select Sites.Name, Sites.Description, Sites.Location, Sites.Type, States.Name AS
 
 - Using `Selenium` for scrapping.
 
-Selenium is originally intended for UI testing, but it can do web scrapping as well. I implemented a `Browser` class in `browser.py` to provide a convenient interface for my python program to access elements and values on the web page.
+[Selenium](https://selenium-python.readthedocs.io/locating-elements.html) is originally intended for UI testing, but it can do web scrapping as well. I implemented a `Browser` class in `browser.py` to provide a convenient interface for my python program to access elements and values on the web page.
 
 - OOP
 
