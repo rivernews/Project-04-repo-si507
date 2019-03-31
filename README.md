@@ -23,14 +23,14 @@ Shaung Cheng
 
 Project overall flow:
 
-(get/navigate to home page)
-get state index urls
-get state abbrv
+1. (get/navigate to home page)
+1. get state index urls
+1. get state abbrv
 
-(get/navigate to state page)
-get site element
-try to get each value
-store data in db
+1. (get/navigate to state page)
+1. get site element
+1. try to get each value
+1. store data in db
 
 \# TODO: add in cache plan after one page succceed
 
