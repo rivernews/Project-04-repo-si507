@@ -19,7 +19,7 @@ This python program scraps information of all sites on the National Park Service
 
 ### To run the project:
 
-1. `python SI507_project4.py` 
+1. `python SI507_project4.py`, make sure you use Python 3.6+.
 
 The repo already contains a database `my-database.sqlite` of all sites finished scrapping. 
 
