@@ -14,7 +14,7 @@ This python program scraps information of all sites on the National Park Service
 ### To install the project:
 
 1. Git clone this project.
-1. Make a virtual environment in the project root folder.
+1. Make a virtual environment in the project root folder, **and activate it**.
 1. `pip install -r requirements.txt` to install all dependencies.
 
 ### To run the project:
